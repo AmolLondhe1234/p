@@ -2,7 +2,7 @@
 
 {% block body %}
 {% comment %}  {% endcomment %}
-<!-- Services section -->
+{% comment %} <!-- Services section -->
 <section id="services" class="services_wrapper">
   <div class="container">
       <div class="row">
@@ -72,26 +72,30 @@
       </div>
   </div>
 </section>
-<!-- Services section exit -->
+<!-- Services section exit --> {% endcomment %}
 
 <!-- Portfolio Sectrion -->
 <section id="portfolio" class="portfolio_wrapper">
   <div class="container">
       <div class="row">
           <div class="col-sm-12 text-center mb-4">
-              <span class="subtitle">My Complete project</span>
-              <h2>My Latest Project</h2>
-              <p>There are many variations of passages of Lorem Ipsum available,<br class="d-none d-md-block">
-                  but the majority have suffered alteration.</p>
+              <span class="subtitle"><h6></h6></span>
+              <h6>My Latest Project</h6>
+              <p>Here is my Academic Projects Of Software devlopment And Web App Devlopment<br class="d-none d-md-block">
+                  As Well As Machine Learning And Data Science Projects.</p>
           </div>
       </div>
       <div class="row">
+        {% for project in projects %}
           <div class="col-lg-3 col-md-6 mb-4">
               <div class="card p-0">
-                  <span style="background-image: url('./images/portfolio/Foodies.png')"></span>
+                {% if project.image %}
+                  <span style="background-image:url('{{ project.image.url }}')"></span>
+                {% endif %}  
               </div>
           </div>
-          <div class="col-lg-3 col-md-6 mb-4">
+        {% endfor %}  
+          {% comment %} <div class="col-lg-3 col-md-6 mb-4">
               <div class="card p-0">
                   <span style="background-image: url('./images/portfolio/App-Landing-Page.png')"></span>
               </div>
@@ -127,7 +131,7 @@
               <div class="card p-0">
                   <span style="background-image: url('./images/portfolio/SEO-Landing-Page.png')"></span>
               </div>
-          </div>
+          </div> {% endcomment %}
 
       </div>
   </div>
