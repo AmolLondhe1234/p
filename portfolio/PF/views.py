@@ -23,14 +23,12 @@ def cert(request):
     return render(request, 'certificates.html', {'cert': cert})
 
 def hireme(request):
-    
     if request.method == 'POST':
-        fname = request.POST['fname']
+        fname = request.POST['name']
         email= request.POST['email']
         phone = request.POST['phone']
-        mess= request.POST['mess']
-        add=feedback(name=fname,email=email,phone=phone,feedback_text=mess)
-        add.save()
+        mess= request.POST['feedback_text']
+        feedback(name=fname,email=email,phone=phone,feedback_text=mess).save()
         messages.success(request,'FeedBack Submited Successfully')
         return render(request,'hireme.html')
     elif request.method=='GET':
@@ -44,7 +42,3 @@ def hireme(request):
 def project(request):
     projects = Project.objects.all()
     return render(request, 'project.html', {'projects': projects})
-
-
-def feedback(request):
-    return render(request,'feedback.html')
