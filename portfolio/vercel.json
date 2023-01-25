@@ -1,24 +1,13 @@
 {
-      "version": 2,
-      "rewrites": [
+    "builds": [{
+        "src": "portfolio/wsgi.py",
+        "use": "@vercel/pyhton",
+        "config": { "maxLambdaSize": "15mb" }
+    }],
+    "routes": [
         {
-          "source": "portfolio/wsgi.py",
-          
-          
-        },
-        {
-        "source": "build_files.sh"
+            "src": "/(.*)",
+            "dest": "portfolio/wsgi.py"
         }
-        
-      ],
-      "routes": [
-        {
-          "source": "/static/(.*)",
-          "dest": "/static/$1"
-        },
-        {
-            "source":"/(.*)",
-            "dest":"portfolio/wsgi.py"
-        }
-      ]
+    ]
 }
