@@ -23,12 +23,12 @@ class certificate(models.Model):
     
     
 class feedback(models.Model):
-    fname=models.CharField(max_length=100)
+    name=models.CharField(max_length=100)
     email=models.EmailField()
     phone=models.IntegerField()
     feedback_text=models.TextField()
     
     def __str__(self):
-        return self.fname
+        return self.name
         
     
