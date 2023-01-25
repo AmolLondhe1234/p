@@ -18,11 +18,8 @@ def skill(request):
 
 
 def cert(request):
-    cert=certificate.objects.all()
-    context={
-        cert:'cert'
-    }
-    return render(request,'certificates.html',context)
+    cert = certificate.objects.all()
+    return render(request, 'certificates.html', {'cert': cert})
 
 def hireme(request):
     return render(request,'hireme.html')

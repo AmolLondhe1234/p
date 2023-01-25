@@ -16,7 +16,7 @@ class certificate(models.Model):
     cert_name=models.CharField( max_length=100)
     cert_course=models.CharField(max_length=100)
     cert_institute=models.CharField(max_length=100)
-    cert_img=models.ImageField( upload_to=None, height_field=None, width_field=None, max_length=None)
+    cert_img=models.ImageField(upload_to='images/')
     
     def __str__(self):
         return self.cert_name
