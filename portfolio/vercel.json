@@ -4,15 +4,12 @@
         {
           "source": "portfolio/wsgi.py",
           
-          "config":{"maxLambadaSize":"15mb","runtime":"python3.10"}
+          
         },
         {
-        "source": "build_files.sh",
+        "source": "build_files.sh"
+        }
         
-        "config":{
-            "distDir": "staticdiles_build"
-        }
-        }
       ],
       "routes": [
         {
@@ -24,4 +21,4 @@
             "dest":"portfolio/wsgi.py"
         }
       ]
-    }
+}
