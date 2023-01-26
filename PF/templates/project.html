@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<!-- Services section -->
+<section id="services" class="services_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center mb-4">
+                <span class="subtitle">My Latest Project </span>
+                <h2>My Certificates</h2>
+                <p>Here is my Academic Projects Of Software devlopment And Web App Devlopment<br class="d-none d-md-block">
+                    As Well As Machine Learning And Data Science Projects</p>
+            </div>
+        </div>
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-body text-md-start text-center">
+                        {% if project.image %}
+                        <img src="{{project.image.url}}" alt="service" class="img-fluid mb-4">
+                        {% endif %}
+                        <h3>{{project.title}}</h3>
+                        <p>{{project.description}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+  </section>
+  <!-- Services section exit -->
+{% endblock body %}
