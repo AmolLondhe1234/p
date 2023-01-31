@@ -13,9 +13,9 @@ def profile(request):
 def ps(request):
     return render(request,'ps.html')
 
-def feedback(request):
+def feedbacks(request):
     if request.method == 'POST':
-        fname = request.POST['name']
+        fname = request.POST['fname']
         email= request.POST['email']
         phone = request.POST['phone']
         mess= request.POST['feedback_text']
@@ -37,20 +37,9 @@ def cert(request):
     return render(request, 'certificates.html', {'cert': cert})
 
 def hireme(request):
-    if request.method == 'POST':
-        fname = request.POST['name']
-        email= request.POST['email']
-        phone = request.POST['phone']
-        mess= request.POST['feedback_text']
-        feedback(name=fname,email=email,phone=phone,feedback_text=mess).save()
-        messages.success(request,'FeedBack Submited Successfully')
-        return render(request,'hireme.html')
-    elif request.method=='GET':
-        return render(request,'hireme.html')
-    else:
-        # return HttpResponse("An error Occured! Employee Has Not Been added")
     
-        return render(request,'hireme.html') 
+    
+    return render(request,'hireme.html') 
     
     
     
