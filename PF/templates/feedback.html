@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
 
 {% block body %}
-{% if messages %}
+
+<section id="contact" class="contact_wrapper">   
+  <br>
+  {% if messages %}
     {% for message in messages %}
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
       <strong>{{message}}</strong>
@@ -11,8 +14,6 @@
     </div>
     {% endfor %}
   {% endif %}  
-<section id="contact" class="contact_wrapper">   
-  <br>
   <br>
   <br>
 <div class="container">
