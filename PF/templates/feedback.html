@@ -1,5 +1,43 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>feedback</h1>
+<section id="contact" class="contact_wrapper">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <strong>{{message}}</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+  {% endif %}     
+  <br>
+  <br>
+  <br>
+<div class="container">
+<div class="row justify-content-center align-items-right">
+<div class="col-lg-6 order-2 order-lg-1 pe-lg-5 text-lg-start text-center">        
+<p><h6>Your Valuable Word/Message/FeedBack About Me And My Website Is Most Important For Me </h6></p>
+<form action="/hireme" method="post">
+    {% csrf_token %}
+    <div class="mb-4">
+        <input type="text" class="form-control" placeholder="Your Name..." autocomplete="off" name="name" value="{{name}}">
+    </div>
+    <div class="mb-4">
+        <input type="number" class="form-control" placeholder="Your Phone..." autocomplete="off" name="phone" value="{{phone}}">
+    </div>
+    <div class="mb-4">
+        <input type="email" class="form-control" placeholder="Your Email..." autocomplete="off" name="email" value="{{email}}">
+    </div>
+    <div class="mb-4">
+        <input cols="40" rows="4" class="form-control" id="message"
+            placeholder="Write a Message..." autocomplete="off" name="feedback_text" value="{{feedback_text}}">
+    </div>
+    <button type="submit" class="main-btn">Submit</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 {% endblock body %}

@@ -13,9 +13,23 @@ def profile(request):
 def ps(request):
     return render(request,'ps.html')
 
-def skill(request):
+def feedback(request):
+    if request.method == 'POST':
+        fname = request.POST['name']
+        email= request.POST['email']
+        phone = request.POST['phone']
+        mess= request.POST['feedback_text']
+        feedback(name=fname,email=email,phone=phone,feedback_text=mess).save()
+        messages.success(request,'FeedBack Submited Successfully')
+        return render(request,'feedback.html')
+    elif request.method=='GET':
+        return render(request,'feedback.html')
+    else:
+        # return HttpResponse("An error Occured! Employee Has Not Been added")
     
-    return render(request,'home.html')
+        return render(request,'feedback.html') 
+    
+    return render(request,'feedback.html')
 
 
 def cert(request):
