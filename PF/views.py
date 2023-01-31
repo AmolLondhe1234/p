@@ -52,6 +52,12 @@ def hireme(request):
     
         return render(request,'hireme.html') 
     
+    
+    
+    
+def hireme2(request):
+    return render(request,'hireme2.html')    
+    
 
 def project(request):
     projects = Project.objects.all()
