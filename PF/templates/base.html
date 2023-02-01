@@ -141,7 +141,11 @@
         <p class="footer-company-about">
           <span><a href="/feedback_view">Feedbacks</a></span>
           {% for fb in fb %}
+          <ul>
+          <li style="color: blanchedalmond;">{{fb.name}}:-
             <li style="color: white;">{{fb.feedback_text}}</li>
+          </li>
+          </ul>  
           {% endfor %}
         <!-- <div class="footer-icons">
 
