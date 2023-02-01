@@ -30,7 +30,12 @@ def feedbacks(request):
         return render(request,'feedback.html') 
     
     return render(request,'feedback.html')
-
+def feedback_view(request):
+    fb=feedback.objects.all()
+    context={
+        'fb':fb
+    }
+    return render(request,'home.html',context)
 
 def cert(request):
     cert = certificate.objects.all()

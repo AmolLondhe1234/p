@@ -93,7 +93,68 @@
      {% endcomment %}
      <script src="static\main.js"></script>
      {% block body %}{% endblock body %}
-     
+     <br style="color:white;">
+     <footer class="footer-distributed">
+  
+      <div class="footer-left">
+
+        <h6>A.L Universe</h6>
+
+        <!-- <p class="footer-links">
+          <a href="#" class="link-1">Home</a>
+          
+          <a href="#">Blog</a>
+        
+          <a href="#">Pricing</a>
+        
+          <a href="#">About</a>
+          
+          <a href="#">Faq</a>
+          
+          <a href="#">Contact</a>
+        </p> -->
+
+        <p class="footer-company-name" style="color:white;">A.L Universe © 2023</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+               <p><span>Maher Bunglow Uday Colony, Mahadeonagar,Manjari Road,Hadapsar</span> Pune, Maharashtra,India</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>+91 9604434223</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@company.com">amolbrand00@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span><a href="/feedback_view">Feedbacks</a></span>
+          {% for fb in fb %}
+            <li style="color: white;">{{fb.feedback_text}}</li>
+          {% endfor %}
+        <!-- <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+
+        </div> -->
+
+      </div>
+
+    </footer>
 </body>
  
 </html>

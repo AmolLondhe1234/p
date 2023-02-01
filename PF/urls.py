@@ -9,4 +9,5 @@ urlpatterns = [
     path('hireme',views.hireme,name='hireme'),
     path('hireme2',views.hireme2,name='hireme2'),
     path('feedbacks',views.feedbacks,name='feedback'),
+    path('feedback_view',views.feedback_view,name='feednack_view')
 ]
